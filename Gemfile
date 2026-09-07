@@ -49,7 +49,7 @@ group :development, :test do
   gem "database_cleaner"
   gem "govuk_test"
   gem "pact", "~> 1.67", require: false
-  gem "pact_broker-client"
+  gem "pact-ffi", "~> 0.4.28", require: false
   gem "pry-byebug"
   gem "rubocop-govuk"
 end
@@ -62,8 +62,10 @@ group :test do
   gem "minitest"
   gem "mocha", require: false
   gem "rails-controller-testing"
+  gem "selenium-webdriver", "~> 4.43.0" # newer versions have dropped Chrome 128
   gem "shoulda-context", "~> 3.0.0.rc1", require: false
   gem "simplecov"
   gem "timecop"
   gem "webmock"
+  gem "zxcvbn-ruby", "~> 1.4" # v2 has updated its pasword strength expectation
 end
