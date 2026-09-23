@@ -52,4 +52,8 @@ private
   def user_agent
     request.headers["user-agent"]
   end
+
+  def sign_in_params
+    params.require(resource_name).permit(:email, :password)
+  end
 end

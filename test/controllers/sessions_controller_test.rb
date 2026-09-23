@@ -29,4 +29,10 @@ class SessionsControllerTest < ActionController::TestCase
 
     assert_not @controller.signed_in?
   end
+
+  should "not raise exception if remember_me is posted" do
+    post :create, params: { user: { email: @user.email, password: "incorrect-password", remember_me: "1" } }
+
+    assert_not @controller.signed_in?
+  end
 end
